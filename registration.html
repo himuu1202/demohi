@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #1cd832;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgb(18, 198, 42);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 2px 5px;
+}
+
+input {
+    width: 100%;
+    padding: px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #dc550c;
+}
+
+.message {
+    text-align: center;
+    color: red;
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Create an Account</h2>
+        <form id="registrationForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Register</button>
+            <p id="message" class="message"></p>
+        </form>
+    </div>
+   
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p><a href="tac.html">Privacy Policy</a> | <a href="tac.html">Terms of Service</a></p>
+    </footer>
+
+    <script>
+
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const message = document.getElementById('message');
+
+    if (password !== confirmPassword) {
+        message.textContent = 'Passwords do not match!';
+    } else {
+        message.textContent = 'Registration successful!';
+        // Here, you can also send the data to your server
+    }
+});
+
+console.log("hello gi")
+
+    </script>
+    
+</body>
+</html>
